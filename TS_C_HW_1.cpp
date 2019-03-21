@@ -1,5 +1,4 @@
 #include <math.h>
-#include <stdio.h>
 #include <iostream>
 #include "numbers.dat"
 
@@ -7,7 +6,8 @@ bool Pr_test(int test)
 {
     if(test == 1)
         return false;
-    for(int i = 2; i <= sqrt(test); i++)
+    double sqrt_test = sqrt(test);
+    for(int i = 2; i <= sqrt_test; i++)
     {
         if(test % i == 0)
             return false;
@@ -45,11 +45,10 @@ int main(int argc, char *argv[])
         int b = std::atoi(argv[i + 1]);
         if(a > b)
         {
-            printf("0\n");
+            std::cout << "0";
             return 0;
         }
-        printf("%ld\n", Search_pr(a, b));
+        std::cout << Search_pr(a, b) << "\n";
     }
-
     return 0;
 }
